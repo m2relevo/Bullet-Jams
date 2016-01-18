@@ -60,5 +60,6 @@ public class PlayerMovement : MonoBehaviour
 	public void bulletDead()
 	{
 		limit = false;
+		Debug.Log ("Rip Bullet");
 	}
 }

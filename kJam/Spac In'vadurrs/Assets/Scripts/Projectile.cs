@@ -92,30 +92,28 @@ public class Projectile : MonoBehaviour
 				Debug.Log ("PLAYER HIT BY ENEMY");
 			}
 
-			if (col.gameObject.name == "P1" && this.gameObject.name != "1") {
+			if (objName == "P1" && this.gameObject.name != "1") {
 				col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
 				col.gameObject.SetActive (false);
 				PMan.playerDead (objName);
-				if (objName == "2")
+				if (this.gameObject.name == "2")
 					PM2.bulletDead ();
-				if (objName == "3")
+				if (this.gameObject.name == "3")
 					PM3.bulletDead ();
-				if (objName == "4")
+				if (this.gameObject.name == "4")
 					PM4.bulletDead ();
 				Destroy (this.gameObject);
-				Debug.Log ("Im Hit");
 			}
 			if (objName == "P2"  && this.gameObject.name != "2") {
 				col.gameObject.GetComponent<PlayerMovement2> ().enabled = !col.gameObject.GetComponent<PlayerMovement2> ().enabled;
 				col.gameObject.SetActive (false);
 				PMan.playerDead (objName);
-				if (objName == "1")
-					PM2.bulletDead ();
-				if (objName == "3")
+				if (this.gameObject.name == "1")
+					PM.bulletDead ();
+				if (this.gameObject.name == "3")
 					PM3.bulletDead ();
-				if (objName == "4")
+				if (this.gameObject.name == "4")
 					PM4.bulletDead ();
-
 				Destroy (this.gameObject);
 			}
 			if (objName == "P3"  && this.gameObject.name != "3") {
@@ -123,24 +121,25 @@ public class Projectile : MonoBehaviour
 				col.gameObject.GetComponent<PlayerMovement3> ().enabled = !col.gameObject.GetComponent<PlayerMovement3> ().enabled;
 				col.gameObject.SetActive (false);
 				PMan.playerDead (objName);
-				if (objName == "1")
-					PM2.bulletDead ();
-				if (objName == "2")
+				if (this.gameObject.name == "1")
+					PM.bulletDead ();
+				if (this.gameObject.name == "2")
 					PM3.bulletDead ();
-				if (objName == "4")
+				if (this.gameObject.name == "4")
 					PM4.bulletDead ();
 				Destroy (this.gameObject);
 			}
-			if (objName == "P4"  && this.gameObject.name != "4") {
+			if (objName == "P4"  && this.gameObject.name != "4") 
+			{
 
 				col.gameObject.GetComponent<PlayerMovement4> ().enabled = !col.gameObject.GetComponent<PlayerMovement4> ().enabled;
 				col.gameObject.SetActive (false);
 				PMan.playerDead (objName);
-				if (objName == "1")
-					PM2.bulletDead ();
-				if (objName == "2")
+				if (this.gameObject.name == "1")
+					PM.bulletDead ();
+				if (this.gameObject.name == "2")
 					PM3.bulletDead ();
-				if (objName == "3")
+				if (this.gameObject.name == "3")
 					PM4.bulletDead ();
 				Destroy (this.gameObject);
 			}

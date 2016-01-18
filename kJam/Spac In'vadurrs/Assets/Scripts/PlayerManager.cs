@@ -162,7 +162,8 @@ public class PlayerManager : MonoBehaviour {
 			life [3].GetComponent<Text> ().text = ((3 - lifes [0]).ToString ()); //3
 
 
-		} else if (pCount [0] == false) 
+		} 
+		else if (pCount [0] == false) 
 		{
 			lifes[0]++;
 		}
