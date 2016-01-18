@@ -60,7 +60,7 @@ public class Projectile : MonoBehaviour
 				 PM4.bulletDead ();
 
 			 Debug.Log("ENEMY HIT");
-			 Destroy(col.gameObject);
+			 //Destroy(col.gameObject);
 			 Destroy(this.gameObject);
 			}
 		}
