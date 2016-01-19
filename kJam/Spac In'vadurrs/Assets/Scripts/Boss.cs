@@ -3,10 +3,13 @@ using System.Collections;
 
 public class Boss : MonoBehaviour 
 {
+	float timer;
+	public double FireRate = 0.1;
 	
 	// Use this for initialization
 	void Start () 
 	{
+		timer = Time.time;
 		this.gameObject.AddComponent<ExplosionPattern>();
 		//Attacking = true;
 	}
@@ -14,7 +17,12 @@ public class Boss : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		this.gameObject.AddComponent<ExplosionPattern> ();
+	    float elapsed = Time.time - timer;
+		if (elapsed > FireRate) 
+		{
+			this.gameObject.AddComponent<ExplosionPattern> ();
+			timer = Time.time;
+		}
 
 	}
 
