@@ -10,23 +10,13 @@ public class EnemyProj : MonoBehaviour {
 	public PlayerManager PMan;
 	int[] Lifes;
 	Vector2 min, max;
+	bool firstTime = true;
 	// Use this for initialization
 	void Start () 
 	{
 		Lifes = new int[5];
 		PMan = GameObject.Find("Manager").GetComponent<PlayerManager>();
 		Lifes = PMan.lifeCheck();
-		bool[] pCheck = new bool[PMan.maxPCount];
-		pCheck = PMan.playerCheck ();
-		if(pCheck[0] == true && Lifes[0] < 3)
-			PM = GameObject.Find("P1").GetComponent<PlayerMovement>();
-		if(pCheck[1] == true && Lifes[1] < 3)
-			PM2 = GameObject.Find("P2").GetComponent<PlayerMovement2>();
-		if(pCheck[2] == true && Lifes[2] < 3)
-			PM3 = GameObject.Find("P3").GetComponent<PlayerMovement3>();
-		if(pCheck[3] == true && Lifes[3] < 3)
-			PM4 = GameObject.Find("P4").GetComponent<PlayerMovement4>();
-
 		max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 	    min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
 	
@@ -36,6 +26,20 @@ public class EnemyProj : MonoBehaviour {
 	void Update () 
 	{
 	
+		if (firstTime == true) 
+		{
+			bool[] pCheck = new bool[PMan.maxPCount];
+			pCheck = PMan.playerCheck ();
+			if(pCheck[0] == true && Lifes[0] < 3)
+				PM = GameObject.Find("P1").GetComponent<PlayerMovement>();
+			if(pCheck[1] == true && Lifes[1] < 3)
+				PM2 = GameObject.Find("P2").GetComponent<PlayerMovement2>();
+			if(pCheck[2] == true && Lifes[2] < 3)
+				PM3 = GameObject.Find("P3").GetComponent<PlayerMovement3>();
+			if(pCheck[3] == true && Lifes[3] < 3)
+				PM4 = GameObject.Find("P4").GetComponent<PlayerMovement4>();
+			firstTime = false;
+		}
 		if (transform.position.y > max.y)
 		{
 			Destroy (this.gameObject);
@@ -48,6 +52,8 @@ public class EnemyProj : MonoBehaviour {
 			Debug.Log ("Enemy Bullet Despawned");
 		}
 	}
+
+
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		string objName = col.gameObject.name;

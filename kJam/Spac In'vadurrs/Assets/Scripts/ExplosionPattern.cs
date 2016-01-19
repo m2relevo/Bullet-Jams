@@ -43,7 +43,15 @@ public class ExplosionPattern : MonoBehaviour {
 			Cannonballs [8].transform.position = Vector3.MoveTowards (transform.position, new Vector3 (1.810F, -2.91F, 0F), step);
 			Cannonballs [9].transform.position = Vector3.MoveTowards (transform.position, new Vector3 (3.720F, -2.91F, 0F), step);
 		   }
-		if (Cannonballs [0] == null) 
+		int j = 0;
+		for (int i = 0; i<10; i++) 
+		{
+			if (Cannonballs [i] == null) 
+			{
+				j++;
+			}
+		}
+		if(j == 9)
 		{
 			endScript();
 		}
