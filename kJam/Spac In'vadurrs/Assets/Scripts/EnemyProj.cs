@@ -9,6 +9,7 @@ public class EnemyProj : MonoBehaviour {
 	public PlayerMovement4 PM4;
 	public PlayerManager PMan;
 	int[] Lifes;
+	Vector2 min, max;
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,6 +26,9 @@ public class EnemyProj : MonoBehaviour {
 			PM3 = GameObject.Find("P3").GetComponent<PlayerMovement3>();
 		if(pCheck[3] == true && Lifes[3] < 3)
 			PM4 = GameObject.Find("P4").GetComponent<PlayerMovement4>();
+
+		max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
+	    min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
 	
 	}
 	
@@ -32,6 +36,17 @@ public class EnemyProj : MonoBehaviour {
 	void Update () 
 	{
 	
+		if (transform.position.y > max.y)
+		{
+			Destroy (this.gameObject);
+			Debug.Log ("Enemy Bullet Despawned");
+			
+		}
+		if (transform.position.y < min.y)
+		{
+			Destroy (this.gameObject);
+			Debug.Log ("Enemy Bullet Despawned");
+		}
 	}
 	void OnTriggerEnter2D(Collider2D col)
 	{

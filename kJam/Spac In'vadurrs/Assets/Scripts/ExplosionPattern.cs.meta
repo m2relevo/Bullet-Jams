@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 794f6e07e2d2e834c9414670d2d22952
-timeCreated: 1453201564
+timeCreated: 1453208679
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - Cannonball: {fileID: 133342, guid: 2c3f7189fa66e694da67fcf93c329013, type: 2}
+  - BossBullet: {fileID: 133342, guid: 2c3f7189fa66e694da67fcf93c329013, type: 2}
+  - BossObj: {fileID: 161410, guid: 739393da8b826fe42b05defdbaed3a7b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

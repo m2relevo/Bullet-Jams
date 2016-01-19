@@ -110,7 +110,7 @@ public class PlayerManager : MonoBehaviour {
 		if (Application.loadedLevelName == "playerselection") 
 		{
 			SetPlayNo ();
-			if (Input.GetKeyDown ("joystick 1 button 7")) {
+			if (Input.GetKeyDown ("joystick 1 button 7") || Input.GetKeyDown ("joystick 2 button 7")) {
 				Application.LoadLevel ("DaRealDemo");
 			}
 		}
