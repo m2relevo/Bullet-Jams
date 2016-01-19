@@ -39,7 +39,7 @@ public class ProjectileShotGun : MonoBehaviour {
 		if(ShotGunShells[4] != null)
 			ShotGunShells [4].transform.position = Vector3.MoveTowards (ShotGunShells[4].transform.position, new Vector3 (-0.62F, -5.0F, 0F), step);
 		if(ShotGunShells[5] != null)
-			ShotGunShells [5].transform.position = Vector3.MoveTowards (ShotGunShells[5].transform.position, new Vector3 (-1.95F, 5.0F, 0F), step);
+			ShotGunShells [5].transform.position = Vector3.MoveTowards (ShotGunShells[5].transform.position, new Vector3 (-2.27F, 5.0F, 0F), step);
 		if(ShotGunShells[6] != null)
 			ShotGunShells [6].transform.position = Vector3.MoveTowards (ShotGunShells[6].transform.position, new Vector3 (-1.95F, 5.0F, 0F), step);
 		if(ShotGunShells[7] != null)
