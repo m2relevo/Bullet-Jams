@@ -51,27 +51,26 @@ public class EnemyProj : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		string objName = col.gameObject.name;
-		if (objName == "P1") 
+		if (col.gameObject.tag == "Player") 
 		{
-			col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
-		}
-		if (objName== "P2") 
-		{
-			col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
-		}
-		if (objName== "P3") 
-		{
-			col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
-		}
-		if (objName == "P4") 
-		{
-			col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
-		}
+			if (objName == "P1") {
+				col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
+			}
+			if (objName == "P2") {
+				col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
+			}
+			if (objName == "P3") {
+				col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
+			}
+			if (objName == "P4") {
+				col.gameObject.GetComponent<PlayerMovement> ().enabled = !col.gameObject.GetComponent<PlayerMovement> ().enabled;
+			}
 		
-		col.gameObject.SetActive (false);
-		PMan.playerDead (objName);
-		Destroy (this.gameObject);
-		Debug.Log ("PLAYER HIT BY ENEMY");
+			col.gameObject.SetActive (false);
+			PMan.playerDead (objName);
+			Destroy (this.gameObject);
+			Debug.Log ("PLAYER HIT BY ENEMY");
+		}
 
 
 		if (objName == "1") 
